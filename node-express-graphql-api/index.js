@@ -1,10 +1,10 @@
-const express = require('express');
+import express from 'express';
 const sqlite3 = require('sqlite3').verbose();
 
-const ExpressGraphQL = require("express-graphql");
-const graphql = require("graphql");
+import ExpressGraphQL from "express-graphql";
+import { GraphQLObjectType, GraphQLID, GraphQLString, GraphQLList, GraphQLNonNull, GraphQLSchema } from "graphql";
 
-const cors = require('cors');
+import cors from 'cors';
 const app = express();
 app.use(cors())
 
@@ -23,21 +23,21 @@ const createContactTable = () => {
 
 createContactTable();
 
-const ContactType = new graphql.GraphQLObjectType({
+const ContactType = new GraphQLObjectType({
     name: "Contact",
     fields: {
-        id: { type: graphql.GraphQLID },
-        firstName: { type: graphql.GraphQLString },
-        lastName: { type: graphql.GraphQLString },
-        email: { type: graphql.GraphQLString }
+        id: { type: GraphQLID },
+        firstName: { type: GraphQLString },
+        lastName: { type: GraphQLString },
+        email: { type: GraphQLString }
     }
 });
 
-var queryType = new graphql.GraphQLObjectType({
+var queryType = new GraphQLObjectType({
     name: 'Query',
     fields: {
         contacts: {
-            type: graphql.GraphQLList(ContactType),
+            type: GraphQLList(ContactType),
             resolve: (root, args, context, info) => {
                 return new Promise((resolve, reject) => {
 
@@ -54,7 +54,7 @@ var queryType = new graphql.GraphQLObjectType({
             type: ContactType,
             args: {
                 id: {
-                    type: new graphql.GraphQLNonNull(graphql.GraphQLID)
+                    type: new GraphQLNonNull(GraphQLID)
                 }
             },
             resolve: (root, { id }, context, info) => {
@@ -71,20 +71,20 @@ var queryType = new graphql.GraphQLObjectType({
     }
 });
 
-var mutationType = new graphql.GraphQLObjectType({
+var mutationType = new GraphQLObjectType({
     name: 'Mutation',
     fields: {
         createContact: {
             type: ContactType,
             args: {
                 firstName: {
-                    type: new graphql.GraphQLNonNull(graphql.GraphQLString)
+                    type: new GraphQLNonNull(GraphQLString)
                 },
                 lastName: {
-                    type: new graphql.GraphQLNonNull(graphql.GraphQLString)
+                    type: new GraphQLNonNull(GraphQLString)
                 },
                 email: {
-                    type: new graphql.GraphQLNonNull(graphql.GraphQLString)
+                    type: new GraphQLNonNull(GraphQLString)
                 }
             },
             resolve: (root, { firstName, lastName, email }) => {
@@ -108,19 +108,19 @@ var mutationType = new graphql.GraphQLObjectType({
             }
         },
         updateContact: {
-            type: graphql.GraphQLString,
+            type: GraphQLString,
             args: {
                 id: {
-                    type: new graphql.GraphQLNonNull(graphql.GraphQLID)
+                    type: new GraphQLNonNull(GraphQLID)
                 },
                 firstName: {
-                    type: new graphql.GraphQLNonNull(graphql.GraphQLString)
+                    type: new GraphQLNonNull(GraphQLString)
                 },
                 lastName: {
-                    type: new graphql.GraphQLNonNull(graphql.GraphQLString)
+                    type: new GraphQLNonNull(GraphQLString)
                 },
                 email: {
-                    type: new graphql.GraphQLNonNull(graphql.GraphQLString)
+                    type: new GraphQLNonNull(GraphQLString)
                 }
             },
             resolve: (root, { id, firstName, lastName, email }) => {
@@ -136,10 +136,10 @@ var mutationType = new graphql.GraphQLObjectType({
             }
         },
         deleteContact: {
-            type: graphql.GraphQLString,
+            type: GraphQLString,
             args: {
                 id: {
-                    type: new graphql.GraphQLNonNull(graphql.GraphQLID)
+                    type: new GraphQLNonNull(GraphQLID)
                 }
             },
             resolve: (root, { id }) => {
@@ -157,7 +157,7 @@ var mutationType = new graphql.GraphQLObjectType({
     }
 });
 
-const schema = new graphql.GraphQLSchema({
+const schema = new GraphQLSchema({
     query: queryType,
     mutation: mutationType
 });
