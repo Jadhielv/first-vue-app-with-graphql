@@ -1,7 +1,7 @@
 # CRUD App in Vue.js
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Jadhielv/first-vue-app-with-graphql/blob/master/LICENSE)
-![GitHub repo size](https://img.shields.io/github/repo-size/jadhielv/search-tasks)
+![GitHub repo size](https://img.shields.io/github/repo-size/jadhielv/first-vue-app-with-graphql)
 [![Twitter Follow](https://img.shields.io/twitter/follow/jadhielv?style=social)](https://twitter.com/intent/follow?screen_name=jadhielv)
 
 ## Getting Started

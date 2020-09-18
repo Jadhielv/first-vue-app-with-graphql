@@ -36,7 +36,7 @@
       <br />
 
       <input v-if="!id" type="button" @click="createContact(firstName, lastName, email)" value="Add" /> &nbsp;&nbsp;
-      <input v-if="id" type="button" @click="updateContact(id, firstName, lastName, email)" value="Update" />
+      <input v-if="id" type="button" @click="updateContact(id, firstName, lastName, email)" value="Update" /> &nbsp;&nbsp;
       <input type="button" @click="clearForm()" value="Clear" />
     </form>
   </div>
