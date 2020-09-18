@@ -1,6 +1,44 @@
-# Building a CRUD App with Vue and GraphQL
+# CRUD App in Vue.js
 
-Learn how you can build a CRUD App with Vue and GraphQL
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Jadhielv/first-vue-app-with-graphql/blob/master/LICENSE)
+![GitHub repo size](https://img.shields.io/github/repo-size/jadhielv/search-tasks)
+[![Twitter Follow](https://img.shields.io/twitter/follow/jadhielv?style=social)](https://twitter.com/intent/follow?screen_name=jadhielv)
+
+## Getting Started
+
+This project is a CRUD App in Vue.js using GraphQL, Babel and Vue Apollo
+
+### How to Use
+
+**Download or clone this repo by using the link below:**
+
+```
+https://github.com/Jadhielv/first-vue-app-with-graphql.git
+```
+
+**Project setup:**
+
+``` 
+npm install
+```
+
+**Compiles and hot-reloads for development:**
+
+``` 
+npm run serve
+```
+
+**Compiles and minifies for production:**
+
+``` 
+npm run build
+```
+
+**Lints and fixes files:**
+
+``` 
+npm run lint
+```
 
 ## License
 
