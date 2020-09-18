@@ -16,25 +16,40 @@ This project is a CRUD App in Vue.js using GraphQL, Babel and Vue Apollo
 https://github.com/Jadhielv/first-vue-app-with-graphql.git
 ```
 
-**Project setup:**
+**Step 1 (```node-express-graphql-api```):**
+
+Project setup:
 
 ``` 
 npm install
 ```
 
-**Compiles and hot-reloads for development:**
+Compiles and hot-reloads for development
+```
+npm start
+```
+
+**Step 2 (```vue-graphql-demo```):**
+
+Project setup:
+
+``` 
+npm install
+```
+
+Compiles and hot-reloads for development:
 
 ``` 
 npm run serve
 ```
 
-**Compiles and minifies for production:**
+Compiles and minifies for production:
 
 ``` 
 npm run build
 ```
 
-**Lints and fixes files:**
+Lints and fixes files:
 
 ``` 
 npm run lint
