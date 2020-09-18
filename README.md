@@ -40,6 +40,9 @@ npm run build
 npm run lint
 ```
 
-## License
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### License
 
 This project uses the following license: [MIT](<https://choosealicense.com/licenses/mit/>)
