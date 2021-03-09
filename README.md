@@ -60,4 +60,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### License
 
-This project uses the following license: [MIT](<https://choosealicense.com/licenses/mit/>)
+This project uses the following license: [MIT](LICENSE)
